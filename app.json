@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 {
   "pages":[
     "pages/index/index",
@@ -6,7 +13,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00b26a",
-    "navigationBarTitleText": "å“ˆå“ˆå“ˆå“ˆ",
+    "navigationBarTitleText": "¹þ¹þ¹þ¹þ",
     "navigationBarTextStyle":"#fff"
   },
   "tabBar":{
@@ -14,13 +21,13 @@
     "list":[
       {
         "pagePath": "pages/index/index",
-        "text": "é¦–é¡µ",
+        "text": "Ê×Ò³",
         "iconPath": "image/home.png",
         "selectedIconPath": "image/home2.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "æµ‹è¯•"
+        "text": "²âÊÔ"
       }
     ]
   }

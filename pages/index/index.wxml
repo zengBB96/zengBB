@@ -1,3 +1,4 @@
+
 <!--index.wxml-->
 <audio src="{{src}}" id='myAudio' loop></audio>
 <view class='img'>
@@ -6,3 +7,7 @@
 <view animation="{{scaleImg}}">
   <image src='/image/img.png' class='scale'></image>
 </view>
+
+
+
+

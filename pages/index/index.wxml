@@ -4,8 +4,8 @@
 <view class='img'>
   <image src="../../image/music-on.png" class='{{isPlay?"rotateAn":""}}' bindtap='controlMusic'></image>
 </view>
-<view animation="{{scaleImg}}">
-  <image src='/image/img.png' class='scale'></image>
+<view class="animation-view"  animation="{{animationData}}">
+  <image  src='/image/img.png' class='scale'></image>
 </view>
 
 

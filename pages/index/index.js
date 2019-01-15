@@ -15,17 +15,15 @@ innerAudioContext.onPlay(() => {
 //   console.log(res.errCode)
 // })
 Page({
-
-  
-  onReady: function (e) {
-   
+  data: {
+    isPlay: true,
+    animationData: {}
   },
+  
   /**
    * 页面的初始数据
    */
-  data: {
-     isPlay: true
-  },
+ 
   controlMusic: function () {
     if (this.data.isPlay) {
       this.setData({
@@ -46,7 +44,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: "linear",
+      transformOrigin: '50% 50% 0'
+    });
+   setInterval(function(){
+     this.animation.translate(Math.random() * 100, Math.random() * 100).step()
+     this.setData({ animationData: this.animation.export() })
+   }.bind(this),1000)
+   
   },
 
   /**

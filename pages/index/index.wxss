@@ -157,14 +157,14 @@
   width: 40rpx;
   height: auto;
   position: absolute;
-  top: 45%;
-  right: 10rpx;
+  top: 38%;
+  right: 25rpx;
   z-index: 999;
 }
 .list view{
   width: 20rpx;
   height: 20rpx;
-  margin: 20rpx auto;
+  margin: 35rpx auto;
   background: #ccc;
   border-radius: 50%;
 }
@@ -176,13 +176,13 @@
   background: rgb(255, 248, 228);
   position: relative;
 }
-.tw_title{
+.tw_title,.th_title,.fo_title{
   position: relative;
   width: 300rpx;
   height: 80rpx;
   border: 1px solid #000;
   top: 120rpx;
-  animation: rote 3s forwards;
+  animation: rote 3s 2s forwards;
   /* margin: 120rpx auto 40rpx auto; */
 }
 @keyframes rote{
@@ -193,17 +193,13 @@
     margin-left: 220rpx;
   }
 }
-.tw_cont{
+.tw_cont,.th_cont,.fo_cont{
   border: 1px solid #000;
   margin: 240rpx auto 120rpx auto;
   animation: scale2 3s 3s forwards;
+  
 
 }
-/* .kuang2{
-  border: 1px solid #000;
-  margin: 20px auto;
-  animation: scale 5s forwards;
-} */
 @keyframes scale2{
   from{width: 0;height: 0;}
   to{ width: 80%; height: 600rpx;}
@@ -217,4 +213,14 @@
   background: rgb(179, 255, 183);
   position: relative;
 }
+/*  */
+.four{
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 0, 0);
+  position: relative;
+}
+
+
+
 

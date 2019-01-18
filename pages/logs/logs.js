@@ -1,5 +1,4 @@
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -7,29 +6,26 @@ Page({
     scrollindex: 0, // 当前页面的索引值
     totalnum: 4, // 总共页面数
     starty: 0, // 开始的位置x
-    startTime: 0,   // 开始的时间戳
+    startTime: 0,  // 开始的时间戳
     endy: 0, // 结束的位置y
-    endTime: 0,   // 结束的时间戳
+    endTime: 0,  // 结束的时间戳
     critical: 80, // 触发翻页的临界值
-    maxTimeCritical: 300,   // 滑动的时间戳临界值上限
-    minTimeCritical: 100,   // 滑动的时间戳临界值下限
+    maxTimeCritical: 300,  // 滑动的时间戳临界值上限
+    minTimeCritical: 100,  // 滑动的时间戳临界值下限
     margintop: 0, // 滑动下拉距离
-
-    currentTarget: null,   // 当前点击的元素的id
+    currentTarget: null,  // 当前点击的元素的id
   },
-
   scrollTouchStart: function (e) {
-    let py = e.touches[0].pageY;
+    let py = e.touches[0].pageY,
       stamp = e.timeStamp,
       currentTarget = e.currentTarget.id;
-    console.log(py);
+    //console.log(py);
     this.setData({
       starty: py,
       startTime: stamp,
       currentTarget: currentTarget
     })
   },
-
   scrollTouchMove(e) {
     // console.log(e);
     let py = e.touches[0].pageY;
@@ -43,7 +39,6 @@ Page({
       })
     }
   },
-
   scrollTouchEnd: function (e) {
     let py = e.changedTouches[0].pageY,
       stamp = e.timeStamp,
@@ -53,9 +48,8 @@ Page({
       endy: py,
       endTime: stamp
     })
-    console.log('开始：' + d.starty, '结束：' + e.changedTouches[0].pageY);
-    console.log('时间戳之差: ' + timeStampdiffer);
-
+    //console.log('开始：' + d.starty, '结束：' + e.changedTouches[0].pageY);
+    //console.log('时间戳之差: ' + timeStampdiffer);
     if (timeStampdiffer <= d.maxTimeCritical && timeStampdiffer > d.minTimeCritical && (d.starty > e.changedTouches[0].pageY)) {
       let currentTarget = parseInt(d.currentTarget.slice(4)),
         nextTarget = currentTarget + 1;
@@ -70,35 +64,18 @@ Page({
           })
         }
       })
-    } else if (timeStampdiffer <= d.maxTimeCritical && timeStampdiffer > d.minTimeCritical && (d.starty < e.changedTouches[0].pageY)) {   // 下拉
+    } else if (timeStampdiffer <= d.maxTimeCritical && timeStampdiffer > d.minTimeCritical && (d.starty < e.changedTouches[0].pageY)) {  // 下拉
       let currentTarget = parseInt(d.currentTarget.slice(4)),
         preTarget = currentTarget - 2 == -1 ? 0 : currentTarget - 2;
-
       const query = wx.createSelectorQuery();
       query.select(`#hook1`).boundingClientRect();
       query.selectViewport().scrollOffset();
       query.exec(function (res) {
-        console.log(res);
+        //console.log(res);
         wx.pageScrollTo({
           scrollTop: res[0].height * preTarget
         })
       })
     }
-
-    // let d = this.data;
-    // if (d.endy - d.starty > 100 && d.scrollindex > 0) {
-    //   this.setData({
-    //     scrollindex: d.scrollindex - 1
-    //   })
-    // } else if (d.endy - d.starty < -100 && d.scrollindex < this.data.totalnum - 1) {
-    //   this.setData({
-    //     scrollindex: d.scrollindex + 1
-    //   })
-    // }
-    // this.setData({
-    //   starty: 0,
-    //   endy: 0,
-    //   margintop: 0
-    // })
   },
 })

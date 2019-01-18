@@ -22,7 +22,7 @@ page {
 }
 
 .scroll-fullpage {
-    height: 100%;
+    height:  calc(100% + 50rpx);
 }
 
 .section {

@@ -1,66 +1,104 @@
-
 Page({
 
   /**
-   * Ò³ÃæµÄ³õÊ¼Êı¾İ
+   * é¡µé¢çš„åˆå§‹æ•°æ®
    */
   data: {
-    scaleImg: null
+    scrollindex: 0, // å½“å‰é¡µé¢çš„ç´¢å¼•å€¼
+    totalnum: 4, // æ€»å…±é¡µé¢æ•°
+    starty: 0, // å¼€å§‹çš„ä½ç½®x
+    startTime: 0,   // å¼€å§‹çš„æ—¶é—´æˆ³
+    endy: 0, // ç»“æŸçš„ä½ç½®y
+    endTime: 0,   // ç»“æŸçš„æ—¶é—´æˆ³
+    critical: 80, // è§¦å‘ç¿»é¡µçš„ä¸´ç•Œå€¼
+    maxTimeCritical: 300,   // æ»‘åŠ¨çš„æ—¶é—´æˆ³ä¸´ç•Œå€¼ä¸Šé™
+    minTimeCritical: 100,   // æ»‘åŠ¨çš„æ—¶é—´æˆ³ä¸´ç•Œå€¼ä¸‹é™
+    margintop: 0, // æ»‘åŠ¨ä¸‹æ‹‰è·ç¦»
+
+    currentTarget: null,   // å½“å‰ç‚¹å‡»çš„å…ƒç´ çš„id
   },
 
-  /**
-   * ÉúÃüÖÜÆÚº¯Êı--¼àÌıÒ³Ãæ¼ÓÔØ
-   */
-  onLoad: function (options) {
-    
+  scrollTouchStart: function (e) {
+    let py = e.touches[0].pageY;
+      stamp = e.timeStamp,
+      currentTarget = e.currentTarget.id;
+    console.log(py);
+    this.setData({
+      starty: py,
+      startTime: stamp,
+      currentTarget: currentTarget
+    })
   },
 
-  /**
-   * ÉúÃüÖÜÆÚº¯Êı--¼àÌıÒ³Ãæ³õ´ÎäÖÈ¾Íê³É
-   */
-  onReady: function () {
-    
+  scrollTouchMove(e) {
+    // console.log(e);
+    let py = e.touches[0].pageY;
+    let d = this.data;
+    this.setData({
+      endy: py,
+    })
+    if (py - d.starty < 100 && py - d.starty > -100) {
+      this.setData({
+        margintop: py - d.starty
+      })
+    }
   },
 
-  /**
-   * ÉúÃüÖÜÆÚº¯Êı--¼àÌıÒ³ÃæÏÔÊ¾
-   */
-  onShow: function () {
-    
-  },
+  scrollTouchEnd: function (e) {
+    let py = e.changedTouches[0].pageY,
+      stamp = e.timeStamp,
+      d = this.data,
+      timeStampdiffer = stamp - d.startTime;
+    this.setData({
+      endy: py,
+      endTime: stamp
+    })
+    console.log('å¼€å§‹ï¼š' + d.starty, 'ç»“æŸï¼š' + e.changedTouches[0].pageY);
+    console.log('æ—¶é—´æˆ³ä¹‹å·®: ' + timeStampdiffer);
 
-  /**
-   * ÉúÃüÖÜÆÚº¯Êı--¼àÌıÒ³ÃæÒş²Ø
-   */
-  onHide: function () {
-    
-  },
+    if (timeStampdiffer <= d.maxTimeCritical && timeStampdiffer > d.minTimeCritical && (d.starty > e.changedTouches[0].pageY)) {
+      let currentTarget = parseInt(d.currentTarget.slice(4)),
+        nextTarget = currentTarget + 1;
+      const query = wx.createSelectorQuery();
+      query.select(`#hook${nextTarget}`).boundingClientRect();
+      query.selectViewport().scrollOffset();
+      query.exec(function (res) {
+        // console.log(res);
+        if (res[0] != null) {
+          wx.pageScrollTo({
+            scrollTop: res[0].height * currentTarget,
+          })
+        }
+      })
+    } else if (timeStampdiffer <= d.maxTimeCritical && timeStampdiffer > d.minTimeCritical && (d.starty < e.changedTouches[0].pageY)) {   // ä¸‹æ‹‰
+      let currentTarget = parseInt(d.currentTarget.slice(4)),
+        preTarget = currentTarget - 2 == -1 ? 0 : currentTarget - 2;
 
-  /**
-   * ÉúÃüÖÜÆÚº¯Êı--¼àÌıÒ³ÃæĞ¶ÔØ
-   */
-  onUnload: function () {
-    
-  },
+      const query = wx.createSelectorQuery();
+      query.select(`#hook1`).boundingClientRect();
+      query.selectViewport().scrollOffset();
+      query.exec(function (res) {
+        console.log(res);
+        wx.pageScrollTo({
+          scrollTop: res[0].height * preTarget
+        })
+      })
+    }
 
-  /**
-   * Ò³ÃæÏà¹ØÊÂ¼ş´¦Àíº¯Êı--¼àÌıÓÃ»§ÏÂÀ­¶¯×÷
-   */
-  onPullDownRefresh: function () {
-    
+    // let d = this.data;
+    // if (d.endy - d.starty > 100 && d.scrollindex > 0) {
+    //   this.setData({
+    //     scrollindex: d.scrollindex - 1
+    //   })
+    // } else if (d.endy - d.starty < -100 && d.scrollindex < this.data.totalnum - 1) {
+    //   this.setData({
+    //     scrollindex: d.scrollindex + 1
+    //   })
+    // }
+    // this.setData({
+    //   starty: 0,
+    //   endy: 0,
+    //   margintop: 0
+    // })
   },
-
-  /**
-   * Ò³ÃæÉÏÀ­´¥µ×ÊÂ¼şµÄ´¦Àíº¯Êı
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * ÓÃ»§µã»÷ÓÒÉÏ½Ç·ÖÏí
-   */
-  onShareAppMessage: function () {
-    
-  }
 })

@@ -7,7 +7,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#00b26a",
     "navigationBarTitleText": "首页",
-    "navigationBarTextStyle":"#fff"
+    "navigationBarTextStyle":"#fff",
+    "disableSwipeBack": "turn"
   },
   "tabBar":{
     "selectedColor": "#00b26a",

@@ -1,10 +1,13 @@
-
 /**index.wxss**/
+/* page{
+  background: #000;
+} */
 .img image{
   width: 36px;
   height: 36px;
   position:absolute;
   right:25px;
+  z-index: 9999;
 }
 .rotateAn{
   animation: rotate 3s linear infinite;
@@ -18,18 +21,200 @@
   from{ transform: rotate(0deg)}
   to{transform: rotate(360deg)}
 }
-.scale{
-  display: block;
-  width: 160rpx;
+
+.scr{
+  width: 100%;
+  height: calc(100% + 50rpx);
+  position: absolute;
+  top: -50rpx;
+  bottom: 0;
+  left: 0;
+}
+.top{
+  width: 100%;
+  height: calc(100% + 50rpx);
+  /* background: #ccc; */
+  /*position: relative;
+   margin: 100rpx auto;
+  padding: 0;
+  transform: scale(1); */
+}
+.middle{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin: 40% auto;
+  transform: scale(1);
+}
+.user{
+  width:200rpx;
+  height: 200rpx;
+  top:150rpx;
+  left:250rpx;
+  position: absolute;
+  margin: 0;
+  /* border: 1px solid #ccc;  */
+}
+.user image{
   height: 160rpx;
-  margin: 80rpx auto;
-  animation:fadeIn 2s 1 0s;
+  width: 160rpx;
+  display: block;
+  margin: 0 auto;
+  animation: fadeIn 3s 1 0s;
 }
 @keyframes fadeIn{
- 0% {
-opacity: 0; 
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
-100% {
-opacity: 1; 
+.user>text{
+  display: block;
+  margin: 0 auto;
+  width:120rpx;
+  height:50rpx;
+
 }
+.txt{
+  left:70rpx;
+  top:120rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(166, 138, 56);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:280rpx 130rpx;
+  animation:rotate 10s infinite linear;
 }
+
+.txtorbit{
+  left: 120rpx;
+  top: 20rpx;
+  width: 450rpx;
+  height: 450rpx;
+  border: 1px dashed gray;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.txt2{
+  left:280rpx;
+  top: -30rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(8, 189, 78);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:70rpx 280rpx;
+  animation:rotate 10s infinite linear;
+}
+
+.txt3{
+  left:500rpx;
+  top: 220rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(64, 124, 255);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:-160rpx 15rpx;
+  animation:rotate 10s infinite linear;
+}
+
+.txt4{
+  left:250rpx;
+  top: 400rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(255, 199, 15);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:80rpx -160rpx;
+  animation:rotate 10s infinite linear;
+}
+
+.txtcon{
+  display:block;
+  margin:40rpx 25rpx;
+  width:100rpx;
+  height:50rpx;
+}
+@keyframes rotate{
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.list{
+  width: 40rpx;
+  height: auto;
+  position: absolute;
+  top: 45%;
+  right: 10rpx;
+  z-index: 999;
+}
+.list view{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 20rpx auto;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+/*  */
+.two{
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 248, 228);
+  position: relative;
+}
+.tw_title{
+  position: relative;
+  width: 300rpx;
+  height: 80rpx;
+  border: 1px solid #000;
+  top: 120rpx;
+  animation: rote 3s forwards;
+  /* margin: 120rpx auto 40rpx auto; */
+}
+@keyframes rote{
+  from{
+    margin-left: -200rpx;
+  }
+  to{
+    margin-left: 220rpx;
+  }
+}
+.tw_cont{
+  border: 1px solid #000;
+  margin: 240rpx auto 120rpx auto;
+  animation: scale2 3s 3s forwards;
+
+}
+/* .kuang2{
+  border: 1px solid #000;
+  margin: 20px auto;
+  animation: scale 5s forwards;
+} */
+@keyframes scale2{
+  from{width: 0;height: 0;}
+  to{ width: 80%; height: 600rpx;}
+}
+
+
+/*  */
+.three{
+  width: 100%;
+  height: 100%;
+  background: rgb(179, 255, 183);
+  position: relative;
+}
+

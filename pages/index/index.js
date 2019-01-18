@@ -4,7 +4,7 @@
 
 
 const innerAudioContext = wx.createInnerAudioContext()
-innerAudioContext.autoplay = true
+innerAudioContext.autoplay = false
 innerAudioContext.src = 'http://139.159.202.24:8888/audio/1.mp3'
 innerAudioContext.onPlay(() => {
   //console.log('开始播放');
@@ -16,14 +16,18 @@ innerAudioContext.onPlay(() => {
 // })
 Page({
   data: {
+
     isPlay: true,
-    animationData: {}
+    // animationData: {},
+    toview:''
+
   },
   
   /**
    * 页面的初始数据
    */
- 
+
+ //音乐
   controlMusic: function () {
     if (this.data.isPlay) {
       this.setData({
@@ -40,19 +44,20 @@ Page({
     }
   },
 
+  //锚点
+  jumpTo:function(e){
+    //获取标签元素上自定义的 data-opt 属性的值
+    let target = e.currentTarget.dataset.opt;
+
+    this.setData({
+      toview: target
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: "linear",
-      transformOrigin: '50% 50% 0'
-    });
-   setInterval(function(){
-     this.animation.translate(Math.random() * 100, Math.random() * 100).step()
-     this.setData({ animationData: this.animation.export() })
-   }.bind(this),1000)
    
   },
 
@@ -103,5 +108,8 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  onPageScroll: function (e) {
+    console.log(e);//{scrollTop:99}
   }
 })

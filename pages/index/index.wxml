@@ -12,11 +12,7 @@
   <view bindtap='jumpTo' data-opt='two'></view>
   <view bindtap='jumpTo' data-opt='three'></view>
   <view bindtap='jumpTo' data-opt='four'></view>
-
 </view>
-<!-- <scroll-view scroll-y class='list' scroll-width-animation="true">
-  <view wx:for="richList" wx:key="{{list.id}}" data-id='list.id' bindtap='clickList' class="scr{{curId == id?'active':''}}"></view>
-</scroll-view> -->
 
 <scroll-view scroll-into-view="{{toview}}" scroll-y="true" bintscroll="scroll" scroll-with-animation="true" class='scr'>
 <!--  -->
@@ -24,38 +20,110 @@
     <view class='middle'>
       <view class='user'>
         <image src='/image/img.png'></image>
-        <text>哈哈哈</text>
+        <text>曾美红</text>
       </view>
 
       <view class='txtorbit'></view>
-      <view class='txt'><text class='txtcon'>123</text></view>
+      <view class='txt'><text class='txtcon'>H5</text></view>
 
       <view class='txtorbit'></view>
-      <view class='txt2'><text class='txtcon'>456</text></view>
+      <view class='txt2'><text class='txtcon'>JQ</text></view>
 
       <view class='txtorbit'></view>
-      <view class='txt3'><text class='txtcon'>789</text></view>
+      <view class='txt3'><text class='txtcon'>JS</text></view>
 
       <view class='txtorbit'></view>
-      <view class='txt4'><text class='txtcon'>000</text></view>
+      <view class='txt4'><text class='txtcon'>VUE</text></view>
 
       </view>
   </view>
 
 <!--  -->
   <view id='two' class='two'>
-      <view class='tw_title'></view>
-      <view class='tw_cont'></view>
+      <view class='tw_title'>
+        <view class='title'>基本信息</view>
+      </view>
+      <view class='tw_cont'>
+        <view>
+          <text>户籍：</text><text>广东深圳市</text>
+        </view>
+        <view>
+          <text>学历：</text><text>本科</text>
+        </view>
+        <view>
+          <text>学校：</text><text>广州松田学院</text>
+        </view>
+        <view>
+          <text>年龄：</text><text>23</text>
+        </view>
+        <view>
+          <text>手机号码：</text><text>18588466619</text>
+        </view>
+        <view>
+          <text>邮箱：</text><text>1187955857@qq.com</text>
+        </view>
+        <view>
+          <text>爱好：</text><text>听歌、电影</text>
+        </view>
+        <view>
+          <text>优势：</text><text>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</text>
+        </view>
+        <view class='bottom'>
+          <text class='wechat'>微信联系</text>
+          <text class='phone'>电话联系</text>
+        </view>
+      </view>
   </view>
   <!--  -->
   <view id='three' class='three'>
-      <view class='th_title'></view>
-      <view class='th_cont'></view>
+      <view class='th_title'><view class='title'>工作经验</view></view>
+      <view class='th_cont'>
+        <view>
+          <text>公司名称：</text><text>深圳市天无涯网络技术有限公司</text>
+        </view>
+        <view>
+          <text>时间：</text><text>2017-2018</text>
+        </view>
+        <view>
+          <text>职位：</text><text>UI设计</text>
+        </view>
+        <view>
+          <text>工作内容：</text><text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+        </view>
+      </view>
+      <!--  -->
+      <view class='th_cont'>
+        <view>
+          <text>公司名称：</text><text>深圳市华兆科技有限公司</text>
+        </view>
+        <view>
+          <text>时间：</text><text>2018-至今</text>
+        </view>
+        <view>
+          <text>职位：</text><text>前端开发</text>
+        </view>
+        <view>
+          <text>工作内容：</text><text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+        </view>
+      </view>
   </view>
   <!--  -->
   <view id='four' class='four'>
-      <view class='fo_title'></view>
-      <view class='fo_cont'></view>
+      <view class='fo_title'><view class='title'>项目经验</view></view>
+      <view class='fo_cont'>
+        <view>
+          <text>公司名称：</text><text>深圳市天无涯网络技术有限公司</text>
+        </view>
+        <view>
+          <text>时间：</text><text>2017-2018</text>
+        </view>
+        <view>
+          <text>职位：</text><text>UI设计</text>
+        </view>
+        <view>
+          <text>工作内容：</text><text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+        </view>
+      </view>
   </view>
 
 </scroll-view>

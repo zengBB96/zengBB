@@ -1,12 +1,16 @@
 /**index.wxss**/
-/* page{
-  background: #000;
-} */
+page {
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
 .img image{
   width: 36px;
   height: 36px;
   position:absolute;
-  right:25px;
+  right:25px; 
   z-index: 9999;
 }
 .rotateAn{
@@ -110,7 +114,7 @@
   background:rgb(8, 189, 78);
   border-radius:50%;
   position:absolute;
-  transform-origin:90rpx 270rpx;
+  transform-origin:100rpx 270rpx;
   animation:rotate 10s infinite linear;
 }
 
@@ -153,7 +157,6 @@
 .bottom{
   display: flex;
   justify-content: space-between;
-  margin-left: -15rpx;
 }
 .wechat{
   width: 50%;
@@ -169,36 +172,20 @@
   text-align: center;
   background: rgb(255, 232, 24);
 }
-.list{
-  width: 40rpx;
-  height: auto;
-  position: absolute;
-  top: 38%;
-  right: 25rpx;
-  z-index: 999;
-}
-.list view{
-  width: 20rpx;
-  height: 20rpx;
-  margin: 35rpx auto;
-  background: #ccc;
-  border-radius: 50%;
-}
 
 /*  */
-.two{
+.two,.three,.four,.five{
   width: 100%;
   height: 100%;
-  /* background: rgba(214, 214, 214, 0.178); */
   position: relative;
 }
-.tw_title,.th_title,.fo_title{
+.tw_title,.th_title,.fo_title,.fi_title{
   position: relative;
   width: 300rpx;
   height: 80rpx;
   font-size: 32rpx;
   border: 1px solid #555;
-  top: 50rpx;
+  top: 20rpx;
   text-align: center;
   padding: 16rpx;
   animation: rote 3s 2s forwards;
@@ -219,7 +206,7 @@
 }
 .tw_cont{
   border: 1px solid #555;
-  margin: 120rpx auto 120rpx auto;
+  margin: 70rpx auto 0;
   padding: 15rpx;
   animation: scale2 3s 3s forwards;
 }
@@ -235,17 +222,17 @@
 }
 
 /*  */
-.three{
+/* .three{
   width: 100%;
   height: 100%;
-  /* background: rgb(179, 255, 183); */
   position: relative;
-}
-.th_cont,.fo_cont{
+} */
+.th_cont{
   border: 1px solid #000;
-  margin: 70rpx auto;
+  margin: 50rpx auto 0;
+  overflow-y: scroll;
   position: relative;
-  animation: scale2 3s 3s forwards;
+  animation: scale3 3s 3s forwards;
 }
 .th_cont view{
   width: 95%;
@@ -253,12 +240,38 @@
   padding: 15rpx;
   border-bottom: 1px dotted #eee;
 }
+.th_cont2{
+  border: 1px solid #000;
+  margin: 40rpx auto 0;
+  overflow-y: scroll;
+  position: relative;
+  animation: scale3 3s 3s forwards;
+}
+.th_cont2 view{
+  width: 95%;
+  line-height: 45rpx;
+  padding: 15rpx;
+  border-bottom: 1px dotted #eee;
+}
+@keyframes scale3{
+  from{width: 0;height: 0;}
+  to{ width: 85%; height: 430rpx;}
+}
 /*  */
-.four{
+/* .four{
   width: 100%;
   height: 100%;
-  /* background: rgb(255, 0, 0); */
   position: relative;
+} */
+.fo_cont,.fi_cont{
+  border: 1px solid #000;
+  margin: 70rpx auto 0;
+  position: relative;
+  animation: scale4 3s 3s forwards;
+}
+@keyframes scale4{
+  from{width: 0;height: 0;}
+  to{ width: 85%; height: auto;}
 }
 .fo_cont view{
   width: 95%;
@@ -266,7 +279,23 @@
   padding: 15rpx;
   border-bottom: 1px dotted #eee;
 }
+/*  */
+.fi_title view{
+  width: 95%;
+  line-height: 45rpx;
+  padding: 15rpx;
+  border-bottom: 1px dotted #eee;
+}
 
+/*  */
+.swiper-item{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
-
-
+swiper {
+display:block;
+height:100%;
+margin-top: -50rpx;
+}

@@ -7,20 +7,20 @@ const innerAudioContext = wx.createInnerAudioContext()
 innerAudioContext.autoplay = false
 innerAudioContext.src = 'http://139.159.202.24:8888/audio/1.mp3'
 innerAudioContext.onPlay(() => {
-  //console.log('开始播放');
-  
+  //console.log('开始播放');  
 })
-// innerAudioContext.onError((res) => {
-//   console.log(res.errMsg)
-//   console.log(res.errCode)
-// })
+
 Page({
   data: {
-
     isPlay: true,
-    // animationData: {},
-    toview:''
-
+    indicatorDots: false,
+    vertical: true,
+    autoplay: false,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0
   },
   
   /**
@@ -43,17 +43,12 @@ Page({
       innerAudioContext.play();
     }
   },
-
-  //锚点
-  jumpTo:function(e){
-    //获取标签元素上自定义的 data-opt 属性的值
-    let target = e.currentTarget.dataset.opt;
-
-    this.setData({
-      toview: target
-    })
+  changeProperty: function (e) {
+    var propertyName = e.currentTarget.dataset.propertyName
+    var newData = {}
+    newData[propertyName] = e.detail.value
+    this.setData(newData)
   },
-  
   /**
    * 生命周期函数--监听页面加载
    */

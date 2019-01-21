@@ -7,13 +7,9 @@ const innerAudioContext = wx.createInnerAudioContext()
 innerAudioContext.autoplay = false
 innerAudioContext.src = 'http://139.159.202.24:8888/audio/1.mp3'
 innerAudioContext.onPlay(() => {
-  //console.log('开始播放');
-  
+  //console.log('开始播放');  
 })
-// innerAudioContext.onError((res) => {
-//   console.log(res.errMsg)
-//   console.log(res.errCode)
-// })
+
 Page({
   data: {
 
@@ -42,16 +38,6 @@ Page({
       });
       innerAudioContext.play();
     }
-  },
-
-  //锚点
-  jumpTo:function(e){
-    //获取标签元素上自定义的 data-opt 属性的值
-    let target = e.currentTarget.dataset.opt;
-
-    this.setData({
-      toview: target
-    })
   },
   
   /**

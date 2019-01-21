@@ -1,45 +1,330 @@
+/**index.wxss**/
 page {
-    height: 100%;
-    background: fff;
-    color: #282828;
-    position:absolute;
-    top:-25px;
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+.img image{
+  width: 36px;
+  height: 36px;
+  position:absolute;
+  right:25px;
+  z-index: 9999;
+}
+.rotateAn{
+  animation: rotate 3s linear infinite;
+}
+.animation-view{
 
+   margin: 30px auto;
+   width:20%;
+}
+@keyframes rotate{
+  from{ transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
 }
 
-.container {
-    flex: 1;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 0;
-    align-items: initial;
-    justify-content: first baseline;
+.scr{
+  width: 100%;
+  height: calc(100% + 50rpx);
+  position: absolute;
+  top: -50rpx;
+  bottom: 0;
+  left: 0;
+}
+.top{
+  width: 100%;
+  height: calc(100% + 50rpx);
+  /* background: #ccc; */
+  /*position: relative;
+   margin: 100rpx auto;
+  padding: 0;
+  transform: scale(1); */
+}
+.middle{
+  width: 100%;
+  height: auto;
+  font-size: 32rpx;
+  position: absolute;
+  margin: 40% auto;
+  transform: scale(1);
+}
+.user{
+  width:200rpx;
+  height: 200rpx;
+  top:150rpx;
+  left:300rpx;
+  position: absolute;
+  margin: 0;
+  /* border: 1px solid #ccc;  */
+}
+.user image{
+  height: 160rpx;
+  width: 160rpx;
+  display: block;
+  margin: 0 auto;
+  animation: fadeIn 3s 1 0s;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.user text{
+  display: block;
+  width:200rpx;
+  text-align: center;
+}
+.txt{
+  left:120rpx;
+  top:120rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(166, 138, 56);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:270rpx 130rpx;
+  animation:rotate 10s infinite linear;
 }
 
-.container-fill {
-    height: 100%;
-    overflow: hidden;
+.txtorbit{
+  left: 160rpx;
+  top: 20rpx;
+  width: 450rpx;
+  height: 450rpx;
+  border: 1px dashed gray;
+  border-radius: 50%;
+  position: absolute;
+  margin: 0;
+  padding: 0;
 }
 
-.scroll-fullpage {
-    height:  calc(100% + 50rpx);
+.txt2{
+  left:280rpx;
+  top: -30rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(8, 189, 78);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:90rpx 270rpx;
+  animation:rotate 10s infinite linear;
 }
 
-.section {
-    height: calc(100% + 50rpx);
+.txt3{
+  left:540rpx;
+  top: 220rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(64, 124, 255);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:-160rpx 18rpx;
+  animation:rotate 10s infinite linear;
 }
 
-.cont {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
+.txt4{
+  left:250rpx;
+  top: 380rpx;
+  height:120rpx;
+  width:120rpx;
+  color:#fff;
+  background:rgb(255, 199, 15);
+  border-radius:50%;
+  position:absolute;
+  transform-origin:140rpx -140rpx;
+  animation:rotate 10s infinite linear;
 }
 
-.cont .cont-body {
-    width: 75%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.txtcon{
+  display:block;
+  margin:35rpx auto;
+  text-align: center;
+}
+@keyframes rotate{
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+  margin-left: -15rpx;
+}
+.wechat{
+  width: 50%;
+  display:block;
+  line-height:80rpx;
+  text-align: center;
+  background:rgb(28, 226, 45);
+}
+.phone{
+  width: 50%;
+  display:block;
+  line-height:80rpx;
+  text-align: center;
+  background: rgb(255, 232, 24);
+}
+.list{
+  width: 40rpx;
+  height: auto;
+  position: absolute;
+  top: 38%;
+  right: 25rpx;
+  z-index: 999;
+}
+.list view{
+  width: 20rpx;
+  height: 20rpx;
+  margin: 35rpx auto;
+  background: #ccc;
+  border-radius: 50%;
+}
+
+/*  */
+.two{
+  width: 100%;
+  height: 100%;
+  /* background: rgba(214, 214, 214, 0.178); */
+  position: relative;
+}
+.tw_title,.th_title,.fo_title{
+  position: relative;
+  width: 300rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  border: 1px solid #555;
+  top: 50rpx;
+  text-align: center;
+  padding: 16rpx;
+  animation: rote 3s 2s forwards;
+  /* margin: 120rpx auto 40rpx auto; */
+}
+
+@keyframes rote{
+  from{
+    margin-left: -200rpx;
+  }
+  to{
+    margin-left: 220rpx;
+  }
+}
+.title{
+  text-align: center;
+  padding: 16rpx;
+}
+.tw_cont{
+  border: 1px solid #555;
+  margin: 120rpx auto 120rpx auto;
+  padding: 15rpx;
+  animation: scale2 3s 3s forwards;
+}
+@keyframes scale2{
+  from{width: 0;height: 0;}
+  to{ width: 85%; height: auto;}
+}
+.tw_cont view{
+  width: 95%;
+  line-height: 45rpx;
+  padding: 15rpx;
+  border-bottom: 1px dotted #eee;
+}
+
+/*  */
+.three{
+  width: 100%;
+  height: 100%;
+  /* background: rgb(179, 255, 183); */
+  position: relative;
+}
+.th_cont,.fo_cont{
+  border: 1px solid #000;
+  margin: 70rpx auto;
+  position: relative;
+  animation: scale2 3s 3s forwards;
+}
+.th_cont view{
+  width: 95%;
+  line-height: 45rpx;
+  padding: 15rpx;
+  border-bottom: 1px dotted #eee;
+}
+/*  */
+.four{
+  width: 100%;
+  height: 100%;
+  /* background: rgb(255, 0, 0); */
+  position: relative;
+}
+.fo_cont view{
+  width: 95%;
+  line-height: 45rpx;
+  padding: 15rpx;
+  border-bottom: 1px dotted #eee;
+}
+
+/*  */
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1AAD19;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-1:before{
+  content: 'A';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782D7;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2:before{
+  content: 'B';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F1F1;
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-3:before{
+  content: 'C';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-item{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+swiper {
+display:block;
+height:100%;
 }

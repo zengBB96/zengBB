@@ -1,32 +1,63 @@
-　　　<!-- 第一页 -->
-　　<view id='hook1' class="section section01 {{scrollindex==0?'active':''}}" style='background:red' bindtouchstart="scrollTouchStart" bindtouchmove='scrollTouchMove' bindtouchend="scrollTouchEnd">
-            <view class='cont'>
-                <view class='cont-body'>
-                    <view>one</view>
-                </view>
-            </view>
-    </view>
-        <!-- 第二页 -->
-        <view id='hook2' class="section section02 {{scrollindex==1?'active':''}}" style='background:pink' bindtouchstart="scrollTouchStart" bindtouchmove='scrollTouchMove' bindtouchend="scrollTouchEnd">
-            <view class='cont'>
-                <view class='cont-body'>
-                    <view>two</view>
-                </view>
-            </view>
+<!--index.wxml-->
+<audio src="{{src}}" id='myAudio' loop></audio>
+<view class='img'>
+  <image src="../../image/music-on.png" class='{{isPlay?"rotateAn":""}}' bindtap='controlMusic'></image>
+</view>
+
+<swiper   indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" bindchange="transition" next-margin="{{nextMargin}}px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item >
+            <!-- <view class="swiper-item"> -->
+                
+<!--  -->
+  <view class='top' id='one'>
+    <view class='middle'>
+      <view class='user'>
+        <image src='/image/img.png'></image>
+        <text>哈哈哈</text>
+      </view>
+
+      <view class='txtorbit'></view>
+      <view class='txt'><text class='txtcon'>H5</text></view>
+
+      <view class='txtorbit'></view>
+      <view class='txt2'><text class='txtcon'>JQ</text></view>
+
+      <view class='txtorbit'></view>
+      <view class='txt3'><text class='txtcon'>JS</text></view>
+
+      <view class='txtorbit'></view>
+      <view class='txt4'><text class='txtcon'>VUE</text></view>
+
+      </view>
+  </view>
+</swiper-item>
+<swiper-item>
+<!--  -->
+  <view id='two' class='two'>
+      <view class='{{style.tw_title}}'>
+        <view class='title'>基本信息</view>
+      </view>
+      <view class='tw_cont'>
+        <view>
+          <text>户籍：</text><text>广东深圳市</text>
         </view>
-        <!-- 第三页 -->
-        <view id='hook3' class="section section03 {{scrollindex==2?'active':''}}" style='background:blue' bindtouchstart="scrollTouchStart" bindtouchmove='scrollTouchMove' bindtouchend="scrollTouchEnd">
-            <view class='cont'>
-                <view class='cont-body'>
-                    <view>three</view>
-                </view>
-            </view>
-        </view>
-        <!-- 第四页 -->
-        <view id='hook4' class="section section04 {{scrollindex==3?'active':''}}" style='background:green' bindtouchstart="scrollTouchStart" bindtouchmove='scrollTouchMove' bindtouchend="scrollTouchEnd">
-            <view class='cont'>
-                <view class='cont-body'>
-                    <view>foure</view>
-                </view>
-            </view>
-        </view>
+      
+      </view>
+  </view>
+  <!--  -->
+</swiper-item>
+            <!-- </view> -->
+          
+        </block>
+</swiper>
+
+<!-- <scroll-view scroll-into-view="{{toview}}" scroll-y="true" bintscroll="scroll" scroll-with-animation="true" class='scr'> -->
+
+  
+
+<!-- </scroll-view> -->
+
+
+

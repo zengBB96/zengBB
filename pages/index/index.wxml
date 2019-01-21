@@ -3,16 +3,6 @@
 <view class='img'>
   <image src="../../image/music-on.png" class='{{isPlay?"rotateAn":""}}' bindtap='controlMusic'></image>
 </view>
-<!-- <view class="animation-view"  animation="{{animationData}}">
-  <image  src='/image/img.png' class='scale'></image>
-</view> -->
-
- <view class='list'>
-  <view bindtap='jumpTo' data-opt='one'></view>
-  <view bindtap='jumpTo' data-opt='two'></view>
-  <view bindtap='jumpTo' data-opt='three'></view>
-  <view bindtap='jumpTo' data-opt='four'></view>
-</view>
 
 <scroll-view scroll-into-view="{{toview}}" scroll-y="true" bintscroll="scroll" scroll-with-animation="true" class='scr'>
 <!--  -->
